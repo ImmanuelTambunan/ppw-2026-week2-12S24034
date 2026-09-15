@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header & Navigasi -->
+  <header class="main-header">
+    <div class="logo">DevPortfolio</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#portfolio">Portofolio</a></li>
+        <li><a href="#contact">Layanan & Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout-wrapper">
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Section 1: Tentang Saya -->
+      <section id="about" class="content-section">
+        <h1>Tentang Saya</h1>
+        <p>Halo! Saya seorang mahasiswa Sistem Informasi yang fokus pada pengembangan antarmuka web modern, bersih, dan accessible.</p>
+        
+        <h2>Keahlian Utama</h2>
+        <ul class="skills-list">
+          <li>HTML5 Semantik & WCAG Accessibility</li>
+          <li>Modern CSS3 (Flexbox & Grid Layout)</li>
+          <li>Git & Version Control Workflow</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 2: PORTOFOLIO KARYA & REKAPITULASI DATA -->
+<section id="portfolio" class="section-container">
+  <div class="section-header">
+    <h2 class="section-title">Portofolio Karya & Rekapitulasi Proyek</h2>
+    <p class="section-subtitle">Ringkasan riwayat proyek perangkat lunak dan metodologi kerja pengembangan web.</p>
+  </div>
+
+  <!-- TABEL SEMANTIK LENGKAP -->
+  <div class="table-card">
+    <div class="table-responsive">
+      <table class="data-table">
+        <caption>Rekapitulasi Proyek Akademik dan Mandiri (2025–2026)</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="col-center">No</th>
+            <th scope="col">Nama Proyek</th>
+            <th scope="col">Peran / Kategori</th>
+            <th scope="col">Teknologi Utama</th>
+            <th scope="col" class="col-center">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="col-center">1</th>
+            <td class="font-medium">EduFlow System</td>
+            <td>Backend Developer</td>
+            <td>Java, MySQL, Git</td>
+            <td class="col-center"><span class="badge badge-success">Selesai</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="col-center">2</th>
+            <td class="font-medium">Labersa Sport Center Booking</td>
+            <td>System Analyst & UI/UX</td>
+            <td>Figma, BPMN, PostgreSQL</td>
+            <td class="col-center"><span class="badge badge-success">Selesai</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="col-center">3</th>
+            <td class="font-medium">Imunify Mobile App</td>
+            <td>UI/UX Designer</td>
+            <td>Figma, UX Research</td>
+            <td class="col-center"><span class="badge badge-warning">Pengujian Usability</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="col-center">4</th>
+            <td class="font-medium">TobaVerse.id Showcase</td>
+            <td>Frontend Developer</td>
+            <td>HTML5, Modern CSS, Flexbox</td>
+            <td class="col-center"><span class="badge badge-info">Pengembangan</span></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Total Proyek Terdata:</strong> 4 Proyek Utama</td>
+            <td colspan="2" class="text-right"><strong>Tingkat Penyelesaian:</strong> 50% Live / 50% WIP</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <!-- CONTAINER LISTS (FLEXBOX SIMETRIS) -->
+  <div class="lists-grid">
+    <!-- LIST 1: UNORDERED LIST (ul) -->
+    <article class="list-card">
+      <div class="list-card-header">
+        <h3 class="list-title">Teknologi & Tools Utama</h3>
+      </div>
+      <ul class="tech-stack-list">
+        <li><strong>Frontend Base:</strong> HTML5 Semantik, CSS3 (Flexbox & Grid)</li>
+        <li><strong>Pemrograman & Logic:</strong> Java OOP, Python Data Science</li>
+        <li><strong>Database Management:</strong> MySQL, PostgreSQL, SQLite</li>
+        <li><strong>Perancangan & UI/UX:</strong> Figma, BPMN Process Modeling</li>
+        <li><strong>Version Control:</strong> Git CLI, GitHub Pages Deployment</li>
+      </ul>    
+    </article>
+
+    <!-- LIST 2: ORDERED LIST (ol) -->
+    <article class="list-card">
+      <div class="list-card-header">
+        <h3 class="list-title">Alur Kerja Pengerjaan Proyek</h3>
+      </div>
+      <ol class="workflow-step-list">
+        <li><strong>Analisis Kebutuhan:</strong> Identifikasi masalah pengguna dan perancangan BPMN.</li>
+        <li><strong>Wireframing & UI Design:</strong> Membuat mockup low-fidelity dan high-fidelity di Figma.</li>
+        <li><strong>Struktur Semantik HTML:</strong> Menyusun kerangka dokumen yang bersih dan accessible.</li>
+        <li><strong>Styling & Responsivitas:</strong> Menerapkan modern CSS, aturan 60-30-10, dan Flexbox.</li>
+        <li><strong>Deployment & Versi:</strong> Commit repositori Git dan publikasi live di GitHub Pages.</li>
+      </ol>
+    </article>
+  </div>
+</section>
+
+      <!-- Section 3: Formulir Kontak Accessible -->
+      <section id="contact" class="content-section">
+        <h2>Formulir Layanan Konsultasi</h2>
+        <form class="custom-form" action="#" method="POST">
+          
+          <!-- Fieldset 1: Identitas -->
+          <fieldset class="form-fieldset">
+            <legend class="form-legend">Informasi Identitas</legend>
+            
+            <div class="form-group">
+              <label for="nama" class="form-label">Nama Lengkap <span class="req">*</span></label>
+              <input type="text" id="nama" name="nama" class="form-control" required placeholder="Masukkan nama lengkap">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Kampus <span class="req">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" required placeholder="nim@del.ac.id" aria-describedby="email-help">
+              <small id="email-help" class="form-help">Gunakan email institusi resmi.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="telepon" class="form-label">Nomor WhatsApp/Telepon <span class="req">*</span></label>
+              <input type="tel" id="telepon" name="telepon" class="form-control" required placeholder="08123456789">
+            </div>
+          </fieldset>
+
+          <!-- Fieldset 2: Detail Layanan -->
+          <fieldset class="form-fieldset">
+            <legend class="form-legend">Detail Pemesanan Layanan</legend>
+
+            <div class="form-group">
+              <label for="jumlah-halaman" class="form-label">Perkiraan Jumlah Halaman</label>
+              <input type="number" id="jumlah-halaman" name="jumlah_halaman" class="form-control" min="1" max="10" value="1">
+            </div>
+
+            <div class="form-group">
+              <label for="kategori" class="form-label">Kategori Layanan</label>
+              <select id="kategori" name="kategori" class="form-control">
+                <option value="frontend">Frontend Web Development</option>
+                <option value="uiux">UI/UX Interface Redesign</option>
+                <option value="audit">Accessibility & SEO Audit</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">Tipe Kerjasama</span>
+              <label class="radio-label">
+                <input type="radio" name="tipe_kerjasama" value="individu" checked> Perorangan
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="tipe_kerjasama" value="tim"> Tim / Kelompok
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="persetujuan" value="setuju" required> Saya menyetujui syarat & ketentuan konsultasi <span class="req">*</span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="pesan" class="form-label">Deskripsi Kebutuhan <span class="req">*</span></label>
+              <textarea id="pesan" name="pesan" class="form-control" rows="4" required placeholder="Jelaskan kebutuhan proyek Anda..."></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn-submit">Kirim Permintaan Konsultasi</button>
+        </form>
+      </section>
+
+    </main>
+
+    <!-- Sidebar (Aside) -->
+    <aside class="sidebar-info">
+      <h3>Informasi Kontak</h3>
+      <p>📍 Sitoluama, Laguboti, Toba</p>
+      <p>📧 student@del.ac.id</p>
+      <div class="status-box">
+        <span class="status-indicator"></span> Menerima Proyek Baru
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <p>&copy; 2026 Institut Teknologi Del - Pemrograman dan Pengujian Web.</p>
+  </footer>
+</body>
+</html>
