@@ -3,68 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio & Layanan Interaktif | Immanuel Alexander Tambunan</title>
+  <title>Portofolio &amp; Layanan Interaktif | Immanuel Alexander Tambunan</title>
+  <!-- Pastikan hubungan file CSS benar -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- HEADER & NAVIGASI SEMANTIK -->
   <header class="main-header">
-    <div class="logo">AlexPortfolio</div>
+    <div class="logo">ImmanuelPortfolio</div>
     <nav class="navbar">
       <ul>
         <li><a href="#about">Profil Saya</a></li>
-        <li><a href="#portfolio">Portofolio & Proyek</a></li>
+        <li><a href="#portfolio">Portofolio &amp; Proyek</a></li>
         <li><a href="#services">Layanan Konsultasi</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- DUA KOLOM LAYOUT -->
+  <!-- WADAH UTAMA (FLEXBOX SIDE-BY-SIDE) -->
   <div class="portfolio-container">
     
-    <!-- SISI KIRI: PROFIL & FOTO (ASIDE / SIDEBAR) -->
+    <!-- SISI KIRI: KARTU PROFIL (ASIDE) -->
     <aside id="about" class="profile-sidebar">
       <div class="profile-card">
         <div class="profile-avatar-wrapper">
-          <!-- Menggunakan foto dari folder asset -->
           <img src="../asset/profil.jpg" alt="Foto Profil Immanuel Alexander Tambunan" class="profile-avatar">
           <span class="status-badge">Aktif</span>
         </div>
-<div class="profile-card-content">
-      <h1 class="profile-name">Immanuel Alexander Tambunan</h1>
-      <span class="profile-role">Mahasiswa S1 Sistem Informasi</span>
-      <p class="profile-inst">Institut Teknologi Del</p>
-      
-      <p class="profile-bio">
-        Pengembang antarmuka web yang berfokus pada arsitektur HTML5 semantik, CSS modern, serta perancangan sistem informasi yang accessible dan intuitif.
-      </p>
 
-      <div class="profile-skills">
-        <h3 class="skills-title">Teknologi &amp; Tools Utama</h3>
-        <ul class="tech-stack-list">
-          <li><strong>Frontend:</strong> HTML5 Semantik, CSS3 (Flexbox &amp; Grid)</li>
-          <li><strong>Logic:</strong> Java OOP, Python Data Science</li>
-          <li><strong>Database:</strong> MySQL, PostgreSQL, SQLite</li>
-          <li><strong>Design:</strong> Figma, BPMN Modeling</li>
-          <li><strong>Version Control:</strong> Git CLI, GitHub Pages</li>
-        </ul>
-      </div>
-    </div>
+        <div class="profile-card-content">
+          <h1 class="profile-name">Immanuel Alexander Tambunan</h1>
+          <span class="profile-role">Mahasiswa S1 Sistem Informasi</span>
+          <p class="profile-inst">Institut Teknologi Del</p>
+          
+          <p class="profile-bio">
+            Pengembang antarmuka web yang berfokus pada arsitektur HTML5 semantik, CSS modern, serta perancangan sistem informasi yang accessible dan intuitif.
+          </p>
+
+          <div class="profile-skills">
+            <h3 class="skills-title">Teknologi &amp; Tools Utama</h3>
+            <ul class="tech-stack-list">
+              <li><strong>Frontend:</strong> HTML5 Semantik, CSS3 (Flexbox &amp; Grid)</li>
+              <li><strong>Logic:</strong> Java OOP, Python Data Science</li>
+              <li><strong>Database:</strong> MySQL, PostgreSQL, SQLite</li>
+              <li><strong>Design:</strong> Figma, BPMN Modeling</li>
+              <li><strong>Version Control:</strong> Git CLI, GitHub Pages</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </aside>
 
-    <!-- SISI KANAN: PORTOFOLIO & REKAPITULASI PROYEK (MAIN CONTENT) -->
+    <!-- SISI KANAN: KONTEN UTAMA (MAIN) -->
     <main class="main-content">
       
-      <!-- SECTION PORTOFOLIO & TABEL -->
+      <!-- PORTOFOLIO & TABEL -->
       <section id="portfolio" class="section-card">
         <header class="section-header">
-          <h2 class="section-title">Portofolio Karya & Rekapitulasi Proyek</h2>
+          <h2 class="section-title">Portofolio Karya &amp; Rekapitulasi Proyek</h2>
           <p class="section-subtitle">Daftar rekapitulasi proyek akademik dan mandiri yang pernah diselesaikan.</p>
         </header>
 
-        <!-- TABEL SEMANTIK LENGKAP -->
         <div class="table-container">
           <table class="data-table">
             <caption>Rekapitulasi Capaian dan Pengalaman Proyek (2025–2026)</caption>
@@ -116,20 +116,19 @@
           </table>
         </div>
 
-        <!-- ALUR KERJA PENGERJAAN PROYEK (ORDERED LIST / ol) -->
         <div class="workflow-card">
           <h3 class="workflow-title">Alur Kerja Pengerjaan Proyek Standar</h3>
           <ol class="workflow-step-list">
             <li><strong>Analisis Kebutuhan:</strong> Identifikasi masalah pengguna dan perancangan alur proses (BPMN).</li>
-            <li><strong>Wireframing & UI Design:</strong> Membuat mockup low-fidelity dan high-fidelity di Figma.</li>
+            <li><strong>Wireframing &amp; UI Design:</strong> Membuat mockup low-fidelity dan high-fidelity di Figma.</li>
             <li><strong>Struktur Semantik HTML:</strong> Menyusun kerangka dokumen yang bersih dan accessible.</li>
-            <li><strong>Styling & Responsivitas:</strong> Menerapkan modern CSS, aturan 60-30-10, dan Flexbox.</li>
-            <li><strong>Deployment & Versi:</strong> Melakukan commit Git dan mempublikasikan situs via GitHub Pages.</li>
+            <li><strong>Styling &amp; Responsivitas:</strong> Menerapkan modern CSS, aturan 60-30-10, dan Flexbox.</li>
+            <li><strong>Deployment &amp; Versi:</strong> Melakukan commit Git dan mempublikasikan situs via GitHub Pages.</li>
           </ol>
         </div>
       </section>
 
-      <!-- SECTION FORMULIR LAYANAN -->
+      <!-- FORMULIR LAYANAN -->
       <section id="services" class="section-card">
         <header class="section-header">
           <h2 class="section-title">Formulir Pemesanan Layanan Konsultasi</h2>
@@ -183,7 +182,7 @@
 
             <div class="form-group">
               <label class="inline-label checkbox-label">
-                <input type="checkbox" name="persetujuan" required> Saya menyetujui syarat & ketentuan layanan. <span class="req">*</span>
+                <input type="checkbox" name="persetujuan" required> Saya menyetujui syarat &amp; ketentuan layanan. <span class="req">*</span>
               </label>
             </div>
 
@@ -200,7 +199,6 @@
     </main>
   </div>
 
-  <!-- FOOTER SEMANTIK -->
   <footer class="main-footer">
     <p>&copy; 2026 Immanuel Alexander Tambunan - Institut Teknologi Del. All Rights Reserved.</p>
   </footer>

@@ -1,47 +1,94 @@
-/* ==========================================
-   ENHANCED PROFILE CARD (GRADIENT & MODERN BLUE)
-   ========================================== */
+/* 1. UNIVERSAL RESET & FONTS */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  line-height: 1.6;
+  background-color: #f8fafc;
+  color: #1e293b;
+  padding: 20px;
+}
+
+/* 2. HEADER & NAVIGASI */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 16px 28px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  margin-bottom: 24px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0284c7;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #0284c7;
+}
+
+/* 3. LAYOUT UTAMA (2 KOLOM FLEXBOX) */
+.portfolio-container {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 24px !important;
+  align-items: flex-start !important;
+  width: 100%;
+}
+
+/* --- SIDEBAR PROFIL (KIRI) --- */
 .profile-sidebar {
-  flex: 1;
-  min-width: 300px;
-  max-width: 340px;
+  flex: 0 0 320px !important; /* Mengunci lebar kolom profil */
+  width: 320px !important;
   position: sticky;
   top: 20px;
 }
 
-/* Container Utama Kartu Profil */
 .profile-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%); /* Latar gradien lembut ke biru muda */
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
   border-radius: 20px;
   border: 1px solid #bae6fd;
-  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.12), 0 8px 10px -6px rgba(2, 132, 199, 0.08);
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.12);
   overflow: hidden;
   text-align: center;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px -5px rgba(2, 132, 199, 0.2);
-}
-
-/* Banner Header Gradasi Biru Muda Interaktif */
 .profile-card::before {
   content: "";
   display: block;
-  height: 110px;
+  height: 100px;
   background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #7dd3fc 100%);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Avatar Foto Profil Overlap Banner */
 .profile-avatar-wrapper {
   position: relative;
-  width: 108px;
-  height: 108px;
-  margin: -54px auto 14px auto; /* Menaikkan foto ke atas banner */
+  width: 100px;
+  height: 100px;
+  margin: -50px auto 12px auto;
 }
 
 .profile-avatar {
@@ -54,110 +101,273 @@
   background-color: #ffffff;
 }
 
-/* Badge Status Aktif Glowing */
 .status-badge {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  bottom: 2px;
+  right: 2px;
+  background: #10b981;
   color: #ffffff;
   font-size: 10px;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 2px 8px;
   border-radius: 12px;
   border: 2px solid #ffffff;
-  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
 }
 
-/* Detail Teks Nama & Profesi */
 .profile-card-content {
-  padding: 0 20px 20px 20px;
+  padding: 0 18px 18px 18px;
 }
 
 .profile-name {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 800;
   color: #0f172a;
-  margin-bottom: 3px;
-  letter-spacing: -0.2px;
+  margin-bottom: 4px;
 }
 
 .profile-role {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: #0284c7;
   background: #e0f2fe;
   display: inline-block;
-  padding: 2px 12px;
-  border-radius: 20px;
-  margin-bottom: 4px;
+  padding: 2px 10px;
+  border-radius: 16px;
+  margin-bottom: 2px;
 }
 
 .profile-inst {
-  font-size: 12px;
+  font-size: 11.5px;
   color: #64748b;
   font-weight: 600;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .profile-bio {
-  font-size: 12.5px;
+  font-size: 12px;
   color: #334155;
-  line-height: 1.55;
-  margin-bottom: 18px;
+  line-height: 1.5;
+  margin-bottom: 16px;
   text-align: left;
-  padding: 12px 14px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 12px;
+  padding: 10px 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
   border: 1px solid #e0f2fe;
 }
 
-/* Kotak Keahlian (Skills Section) */
 .profile-skills {
   text-align: left;
   background: #ffffff;
-  padding: 16px;
-  border-radius: 14px;
+  padding: 14px;
+  border-radius: 12px;
   border: 1px solid #bae6fd;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.05);
 }
 
 .skills-title {
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.5px;
   color: #0369a1;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   border-bottom: 2px solid #e0f2fe;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .tech-stack-list {
   list-style: none;
-  font-size: 12px;
+  font-size: 11.5px;
   color: #334155;
   padding: 0;
-  margin: 0;
 }
 
 .tech-stack-list li {
-  margin-bottom: 8px;
-  padding-left: 14px;
+  margin-bottom: 6px;
+  padding-left: 12px;
   position: relative;
-  line-height: 1.4;
 }
 
 .tech-stack-list li::before {
   content: "•";
   color: #38bdf8;
   font-weight: bold;
-  font-size: 16px;
   position: absolute;
   left: 0;
-  top: -2px;
 }
 
-.tech-stack-list li:last-child {
-  margin-bottom: 0;
+/* --- KONTEN UTAMA (KANAN) --- */
+.main-content {
+  flex: 1 !important;
+  min-width: 0; /* Mencegah overflow flex child */
+}
+
+.section-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 19px;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.section-subtitle {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+/* TABEL STYLING */
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.data-table caption {
+  padding: 10px 14px;
+  font-weight: 700;
+  color: #0369a1;
+  background: #f0f9ff;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.data-table th, .data-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.data-table thead th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.col-center { text-align: center; }
+.text-right { text-align: right; }
+.font-bold { font-weight: 600; color: #0f172a; }
+
+.badge {
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 12px;
+}
+.badge-success { background: #dcfce7; color: #15803d; }
+.badge-warning { background: #fef3c7; color: #b45309; }
+.badge-info { background: #e0f2fe; color: #0369a1; }
+
+/* WORKFLOW STYLING */
+.workflow-card {
+  background-color: #f8fafc;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #0284c7;
+}
+
+.workflow-title {
+  font-size: 13.5px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.workflow-step-list {
+  padding-left: 18px;
+  font-size: 12px;
+  color: #334155;
+}
+
+.workflow-step-list li {
+  margin-bottom: 6px;
+}
+
+/* FORM STYLING */
+.form-fieldset {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.form-legend {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0284c7;
+  padding: 0 6px;
+}
+
+.form-group { margin-bottom: 12px; }
+
+.form-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.inline-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.radio-group { display: flex; gap: 16px; margin-top: 4px; }
+
+.form-control {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 12.5px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
+}
+
+.req { color: #ef4444; }
+
+.btn-submit {
+  width: 100%;
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #0369a1;
+}
+
+/* FOOTER */
+.main-footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 10px;
 }
