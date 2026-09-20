@@ -1,3 +1,7 @@
+/* ==========================================
+   ENHANCED COLORFUL & MODERN CSS
+   ========================================== */
+
 /* 1. UNIVERSAL RESET & FONTS */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -8,28 +12,32 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   line-height: 1.6;
-  background-color: #f8fafc;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%); /* Latar Biru Muda Soft */
   color: #1e293b;
-  padding: 20px;
+  padding: 24px;
+  min-height: 100vh;
 }
 
-/* 2. HEADER & NAVIGASI */
+/* 2. HEADER & NAVIGASI DENGAN GRADIENT & SHADOW */
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
   padding: 16px 28px;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  border: 1px solid #bae6fd;
+  box-shadow: 0 8px 20px -6px rgba(2, 132, 199, 0.15);
   margin-bottom: 24px;
 }
 
 .logo {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
-  color: #0284c7;
+  background: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .navbar ul {
@@ -43,11 +51,14 @@ body {
   color: #334155;
   font-weight: 600;
   font-size: 14px;
-  transition: color 0.2s ease;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
 }
 
 .navbar a:hover {
   color: #0284c7;
+  background-color: #e0f2fe;
 }
 
 /* 3. LAYOUT UTAMA (2 KOLOM FLEXBOX) */
@@ -59,36 +70,40 @@ body {
   width: 100%;
 }
 
-/* --- SIDEBAR PROFIL (KIRI) --- */
+/* --- SIDEBAR PROFIL KIRI (COLORFUL SKY BLUE GRADIENT) --- */
 .profile-sidebar {
-  flex: 0 0 320px !important; /* Mengunci lebar kolom profil */
+  flex: 0 0 320px !important;
   width: 320px !important;
   position: sticky;
   top: 20px;
 }
 
 .profile-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+  background: #ffffff;
   border-radius: 20px;
-  border: 1px solid #bae6fd;
-  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.12);
+  border: 1.5px solid #bae6fd;
+  box-shadow: 0 12px 28px -6px rgba(2, 132, 199, 0.18);
   overflow: hidden;
   text-align: center;
-  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
 }
 
 .profile-card::before {
   content: "";
   display: block;
-  height: 100px;
-  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #7dd3fc 100%);
+  height: 110px;
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #6366f1 100%); /* Gradasi Biru Terang ke Ungu */
 }
 
 .profile-avatar-wrapper {
   position: relative;
-  width: 100px;
-  height: 100px;
-  margin: -50px auto 12px auto;
+  width: 104px;
+  height: 104px;
+  margin: -52px auto 12px auto;
 }
 
 .profile-avatar {
@@ -97,7 +112,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #ffffff;
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.25);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
   background-color: #ffffff;
 }
 
@@ -105,21 +120,22 @@ body {
   position: absolute;
   bottom: 2px;
   right: 2px;
-  background: #10b981;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: #ffffff;
   font-size: 10px;
   font-weight: 700;
-  padding: 2px 8px;
+  padding: 3px 9px;
   border-radius: 12px;
   border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
 }
 
 .profile-card-content {
-  padding: 0 18px 18px 18px;
+  padding: 0 18px 20px 18px;
 }
 
 .profile-name {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
   color: #0f172a;
   margin-bottom: 4px;
@@ -129,9 +145,9 @@ body {
   font-size: 12px;
   font-weight: 700;
   color: #0284c7;
-  background: #e0f2fe;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
   display: inline-block;
-  padding: 2px 10px;
+  padding: 3px 12px;
   border-radius: 16px;
   margin-bottom: 2px;
 }
@@ -140,24 +156,24 @@ body {
   font-size: 11.5px;
   color: #64748b;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .profile-bio {
   font-size: 12px;
   color: #334155;
-  line-height: 1.5;
+  line-height: 1.55;
   margin-bottom: 16px;
   text-align: left;
   padding: 10px 12px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background: #f0f9ff;
   border-radius: 10px;
-  border: 1px solid #e0f2fe;
+  border-left: 3px solid #38bdf8;
 }
 
 .profile-skills {
   text-align: left;
-  background: #ffffff;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   padding: 14px;
   border-radius: 12px;
   border: 1px solid #bae6fd;
@@ -165,10 +181,10 @@ body {
 
 .skills-title {
   font-size: 11.5px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #0369a1;
+  letter-spacing: 0.6px;
+  color: #0284c7;
   margin-bottom: 8px;
   border-bottom: 2px solid #e0f2fe;
   padding-bottom: 4px;
@@ -183,51 +199,55 @@ body {
 
 .tech-stack-list li {
   margin-bottom: 6px;
-  padding-left: 12px;
+  padding-left: 14px;
   position: relative;
 }
 
 .tech-stack-list li::before {
-  content: "•";
+  content: "✦";
   color: #38bdf8;
   font-weight: bold;
   position: absolute;
   left: 0;
+  font-size: 10px;
+  top: 1px;
 }
 
-/* --- KONTEN UTAMA (KANAN) --- */
+/* --- KONTEN UTAMA KANAN (COLORFUL CARDS) --- */
 .main-content {
   flex: 1 !important;
-  min-width: 0; /* Mencegah overflow flex child */
+  min-width: 0;
 }
 
 .section-card {
   background: #ffffff;
-  padding: 24px;
-  border-radius: 16px;
+  padding: 26px;
+  border-radius: 20px;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
   margin-bottom: 24px;
 }
 
 .section-title {
-  font-size: 19px;
+  font-size: 20px;
   color: #0f172a;
   margin-bottom: 4px;
+  font-weight: 800;
 }
 
 .section-subtitle {
   font-size: 12.5px;
   color: #64748b;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
-/* TABEL STYLING */
+/* TABEL STYLING BERWARNA */
 .table-container {
   overflow-x: auto;
   margin-bottom: 20px;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  border: 1px solid #e0f2fe;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.06);
 }
 
 .data-table {
@@ -237,16 +257,17 @@ body {
 }
 
 .data-table caption {
-  padding: 10px 14px;
-  font-weight: 700;
-  color: #0369a1;
-  background: #f0f9ff;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  font-weight: 800;
+  color: #0284c7;
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+  border-bottom: 1.5px solid #bae6fd;
   text-align: left;
+  font-size: 13px;
 }
 
 .data-table th, .data-table td {
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-bottom: 1px solid #f1f5f9;
 }
 
@@ -255,69 +276,97 @@ body {
   color: #475569;
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f0f9ff;
 }
 
 .col-center { text-align: center; }
 .text-right { text-align: right; }
-.font-bold { font-weight: 600; color: #0f172a; }
+.font-bold { font-weight: 700; color: #0f172a; }
 
+/* BADGES WARNA TERANG ELEGAN */
 .badge {
-  padding: 3px 8px;
-  font-size: 10px;
+  padding: 4px 10px;
+  font-size: 10.5px;
   font-weight: 700;
   border-radius: 12px;
+  display: inline-block;
 }
-.badge-success { background: #dcfce7; color: #15803d; }
-.badge-warning { background: #fef3c7; color: #b45309; }
-.badge-info { background: #e0f2fe; color: #0369a1; }
+.badge-success { 
+  background: #dcfce7; 
+  color: #15803d; 
+  border: 1px solid #86efac; 
+}
+.badge-warning { 
+  background: #fef3c7; 
+  color: #b45309; 
+  border: 1px solid #fde047; 
+}
+.badge-info { 
+  background: #e0f2fe; 
+  color: #0369a1; 
+  border: 1px solid #7dd3fc; 
+}
 
-/* WORKFLOW STYLING */
+/* WORKFLOW CARD DENGAN GRADIENT ACCENT */
 .workflow-card {
-  background-color: #f8fafc;
-  padding: 16px;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  border-left: 4px solid #0284c7;
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid #bae6fd;
+  border-left: 5px solid #0284c7;
 }
 
 .workflow-title {
-  font-size: 13.5px;
+  font-size: 14px;
   color: #0f172a;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .workflow-step-list {
-  padding-left: 18px;
-  font-size: 12px;
+  padding-left: 20px;
+  font-size: 12.5px;
   color: #334155;
 }
 
 .workflow-step-list li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-/* FORM STYLING */
+.workflow-step-list li::marker {
+  color: #0284c7;
+  font-weight: bold;
+}
+
+/* FORM STYLING DENGAN FOCUS GLOW */
 .form-fieldset {
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  padding: 14px;
-  margin-bottom: 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
 }
 
 .form-legend {
-  font-size: 11.5px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 800;
   color: #0284c7;
-  padding: 0 6px;
+  padding: 0 8px;
+  background-color: #e0f2fe;
+  border-radius: 6px;
 }
 
-.form-group { margin-bottom: 12px; }
+.form-group { margin-bottom: 14px; }
 
 .form-label {
   display: block;
   font-size: 12.5px;
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .inline-label {
@@ -328,46 +377,49 @@ body {
   cursor: pointer;
 }
 
-.radio-group { display: flex; gap: 16px; margin-top: 4px; }
+.radio-group { display: flex; gap: 18px; margin-top: 4px; }
 
 .form-control {
   width: 100%;
-  padding: 8px 12px;
+  padding: 10px 12px;
   font-size: 12.5px;
   border: 1.5px solid #cbd5e1;
   border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
 .form-control:focus {
   outline: none;
   border-color: #0284c7;
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.2);
 }
 
 .req { color: #ef4444; }
 
 .btn-submit {
   width: 100%;
-  background-color: #0284c7;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
   color: #ffffff;
   border: none;
-  padding: 10px;
-  font-size: 13.5px;
-  font-weight: 600;
-  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  transition: all 0.25s ease;
 }
 
 .btn-submit:hover {
-  background-color: #0369a1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
 }
 
 /* FOOTER */
 .main-footer {
   text-align: center;
-  padding: 16px;
-  font-size: 11.5px;
+  padding: 18px;
+  font-size: 12px;
   color: #64748b;
   margin-top: 10px;
 }
