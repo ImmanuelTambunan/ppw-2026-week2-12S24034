@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio &amp; Layanan Interaktif | Immanuel Alexander Tambunan</title>
+  <title>Portofolio & Layanan Interaktif | Immanuel Alexander Tambunan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,36 +13,57 @@
     <div class="logo">AlexPortfolio</div>
     <nav class="navbar">
       <ul>
-        <li><a href="#about">Tentang Saya</a></li>
-        <li><a href="#portfolio">Portofolio &amp; Proyek</a></li>
+        <li><a href="#about">Profil Saya</a></li>
+        <li><a href="#portfolio">Portofolio & Proyek</a></li>
         <li><a href="#services">Layanan Konsultasi</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="content-wrapper">
-    <!-- MAIN CONTENT AREA -->
-    <main class="main-content">
-
-      <!-- SECTION 1: TENTANG SAYA -->
-      <section id="about" class="section-card">
-        <header class="section-header">
-          <h1 class="section-title">Profil Pengembang &amp; UI Developer</h1>
-          <p class="section-subtitle">Mahasiswa S1 Sistem Informasi Institut Teknologi Del</p>
-        </header>
-        <div class="about-body">
-          <p>Halo! Saya <strong>Immanuel Alexander Tambunan</strong>, pengembang antarmuka web yang berfokus pada arsitektur HTML5 semantik, CSS modern, serta perancangan sistem informasi yang accessible dan intuitif.</p>
+  <!-- DUA KOLOM LAYOUT -->
+  <div class="portfolio-container">
+    
+    <!-- SISI KIRI: PROFIL & FOTO (ASIDE / SIDEBAR) -->
+    <aside id="about" class="profile-sidebar">
+      <div class="profile-card">
+        <div class="profile-avatar-wrapper">
+          <!-- Menggunakan foto dari folder asset -->
+          <img src="../asset/profil.jpg" alt="Foto Profil Immanuel Alexander Tambunan" class="profile-avatar">
+          <span class="status-badge">Aktif</span>
         </div>
-      </section>
+        <h1 class="profile-name">Immanuel Alexander Tambunan</h1>
+        <p class="profile-role">Mahasiswa S1 Sistem Informasi</p>
+        <p class="profile-inst">Institut Teknologi Del</p>
+        
+        <p class="profile-bio">
+          Pengembang antarmuka web yang berfokus pada arsitektur HTML5 semantik, CSS modern, serta perancangan sistem informasi yang accessible dan intuitif.
+        </p>
 
-      <!-- SECTION 2: PORTOFOLIO & TABEL SEMANTIK -->
+        <!-- KEAHLIAN & TOOLS (UNORDERED LIST / ul) -->
+        <div class="profile-skills">
+          <h3 class="skills-title">Teknologi & Tools Utama</h3>
+          <ul class="tech-stack-list">
+            <li><strong>Frontend:</strong> HTML5 Semantik, CSS3 (Flexbox & Grid)</li>
+            <li><strong>Logic:</strong> Java OOP, Python Data Science</li>
+            <li><strong>Database:</strong> MySQL, PostgreSQL, SQLite</li>
+            <li><strong>Design:</strong> Figma, BPMN Modeling</li>
+            <li><strong>Version Control:</strong> Git CLI, GitHub Pages</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- SISI KANAN: PORTOFOLIO & REKAPITULASI PROYEK (MAIN CONTENT) -->
+    <main class="main-content">
+      
+      <!-- SECTION PORTOFOLIO & TABEL -->
       <section id="portfolio" class="section-card">
         <header class="section-header">
-          <h2 class="section-title">Portofolio Karya &amp; Rekapitulasi Proyek</h2>
-          <p class="section-subtitle">Daftar proyek akademik dan mandiri yang pernah diselesaikan.</p>
+          <h2 class="section-title">Portofolio Karya & Rekapitulasi Proyek</h2>
+          <p class="section-subtitle">Daftar rekapitulasi proyek akademik dan mandiri yang pernah diselesaikan.</p>
         </header>
 
-        <!-- TABEL DATA SEMANTIK LENGKAP -->
+        <!-- TABEL SEMANTIK LENGKAP -->
         <div class="table-container">
           <table class="data-table">
             <caption>Rekapitulasi Capaian dan Pengalaman Proyek (2025–2026)</caption>
@@ -72,7 +93,7 @@
               </tr>
               <tr>
                 <th scope="row" class="col-center">3</th>
-                <td class="font-bold">Imunify App</td>
+                <td class="font-bold">Imunify Mobile App</td>
                 <td>UI/UX Designer</td>
                 <td>Figma Prototype</td>
                 <td class="col-center"><span class="badge badge-warning">Usability Test</span></td>
@@ -94,40 +115,27 @@
           </table>
         </div>
 
-        <!-- DUA JENIS HTML LISTS -->
-        <div class="lists-grid">
-          <article class="list-card">
-            <h3 class="list-title">Teknologi &amp; Tools Utama (ul)</h3>
-            <ul class="tech-tags-list">
-              <li><span class="tag-cat">Frontend:</span> HTML5 Semantik, Modern CSS3</li>
-              <li><span class="tag-cat">Logic:</span> Java OOP, Python Data Science</li>
-              <li><span class="tag-cat">Database:</span> MySQL, PostgreSQL, SQLite</li>
-              <li><span class="tag-cat">Design:</span> Figma, BPMN Modeling</li>
-            </ul>
-          </article>
-
-          <article class="list-card">
-            <h3 class="list-title">Alur Kerja Pengerjaan Proyek (ol)</h3>
-            <ol class="workflow-step-list">
-              <li>Analisis Kebutuhan Pengguna &amp; Alur Sistem</li>
-              <li>Perancangan Wireframe &amp; UI Prototype di Figma</li>
-              <li>Penyusunan Struktur Semantik HTML5</li>
-              <li>Styling &amp; Desain Responsif dengan Flexbox</li>
-              <li>Versioning Git &amp; Deployment GitHub Pages</li>
-            </ol>
-          </article>
+        <!-- ALUR KERJA PENGERJAAN PROYEK (ORDERED LIST / ol) -->
+        <div class="workflow-card">
+          <h3 class="workflow-title">Alur Kerja Pengerjaan Proyek Standar</h3>
+          <ol class="workflow-step-list">
+            <li><strong>Analisis Kebutuhan:</strong> Identifikasi masalah pengguna dan perancangan alur proses (BPMN).</li>
+            <li><strong>Wireframing & UI Design:</strong> Membuat mockup low-fidelity dan high-fidelity di Figma.</li>
+            <li><strong>Struktur Semantik HTML:</strong> Menyusun kerangka dokumen yang bersih dan accessible.</li>
+            <li><strong>Styling & Responsivitas:</strong> Menerapkan modern CSS, aturan 60-30-10, dan Flexbox.</li>
+            <li><strong>Deployment & Versi:</strong> Melakukan commit Git dan mempublikasikan situs via GitHub Pages.</li>
+          </ol>
         </div>
       </section>
 
-      <!-- SECTION 3: FORMULIR LAYANAN ACCESSIBLE (MIN 6 INPUT) -->
+      <!-- SECTION FORMULIR LAYANAN -->
       <section id="services" class="section-card">
         <header class="section-header">
           <h2 class="section-title">Formulir Pemesanan Layanan Konsultasi</h2>
-          <p class="section-subtitle">Isi formulir di bawah ini untuk memulai diskusi proyek.</p>
+          <p class="section-subtitle">Silakan isi formulir di bawah ini untuk memulai diskusi proyek.</p>
         </header>
 
         <form class="custom-form" action="#" method="POST">
-          <!-- Fieldset 1: Data Identitas -->
           <fieldset class="form-fieldset">
             <legend class="form-legend">Informasi Pemohon</legend>
 
@@ -138,7 +146,7 @@
 
             <div class="form-group">
               <label for="pemohon-email" class="form-label">Email Kampus / Instansi <span class="req">*</span></label>
-              <input type="email" id="pemohon-email" name="email" class="form-control" required placeholder="nama@domain.com">
+              <input type="email" id="pemohon-email" name="email" class="form-control" required placeholder="nama@del.ac.id">
             </div>
 
             <div class="form-group">
@@ -147,12 +155,11 @@
             </div>
           </fieldset>
 
-          <!-- Fieldset 2: Detail Layanan -->
           <fieldset class="form-fieldset">
             <legend class="form-legend">Spesifikasi Permintaan</legend>
 
             <div class="form-group">
-              <label for="layanan-tipe" class="form-label">Jenis Layanan Kontak</label>
+              <label for="layanan-tipe" class="form-label">Jenis Layanan</label>
               <select id="layanan-tipe" name="tipe_layanan" class="form-control">
                 <option value="uiux">Perancangan UI/UX Web</option>
                 <option value="frontend">Pengembangan Frontend HTML/CSS</option>
@@ -175,7 +182,7 @@
 
             <div class="form-group">
               <label class="inline-label checkbox-label">
-                <input type="checkbox" name="persetujuan" required> Saya menyetujui syarat &amp; ketentuan layanan. <span class="req">*</span>
+                <input type="checkbox" name="persetujuan" required> Saya menyetujui syarat & ketentuan layanan. <span class="req">*</span>
               </label>
             </div>
 
@@ -188,13 +195,8 @@
           <button type="submit" class="btn-submit">Kirim Permintaan Konsultasi</button>
         </form>
       </section>
-    </main>
 
-    <!-- ASIDE SIDEBAR -->
-    <aside class="sidebar-card">
-      <h3 class="sidebar-title">Info Ringkas</h3>
-      <p>Terbuka untuk kolaborasi proyek *Web Development* dan evaluasi antarmuka berbasis WCAG AA.</p>
-    </aside>
+    </main>
   </div>
 
   <!-- FOOTER SEMANTIK -->

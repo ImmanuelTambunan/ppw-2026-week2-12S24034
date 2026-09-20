@@ -1,4 +1,4 @@
-/* 1. Universal Reset & Box Sizing Reset */
+/* 1. Universal Reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +13,7 @@ body {
   padding: 20px;
 }
 
-/* 2. Header & Navigasi Header */
+/* 2. Header & Navigasi */
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -50,32 +50,121 @@ body {
   color: #0284c7;
 }
 
-/* 3. Main Grid Layout dengan Sidebar (Aside) */
-.content-wrapper {
+/* 3. Portfolio Container Layout (Kiri: Profil, Kanan: Konten Utama) */
+.portfolio-container {
   display: flex;
   gap: 24px;
+  align-items: flex-start;
 }
 
-.main-content {
-  flex: 3;
-}
-
-.sidebar-card {
+/* --- SIDEBAR KIRI (PROFIL) --- */
+.profile-sidebar {
   flex: 1;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  height: fit-content;
+  min-width: 300px;
+  max-width: 340px;
+  position: sticky;
+  top: 20px;
 }
 
-.sidebar-title {
-  font-size: 15px;
+.profile-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 16px auto;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0284c7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background-color: #10b981;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 2px solid #ffffff;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.profile-role {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0284c7;
+}
+
+.profile-inst {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.profile-bio {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.profile-skills {
+  text-align: left;
+  background-color: #f8fafc;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.skills-title {
+  font-size: 13px;
   color: #0f172a;
   margin-bottom: 8px;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 4px;
 }
 
-/* 4. Section Card Components */
+.tech-stack-list {
+  list-style: none;
+  font-size: 12px;
+  color: #334155;
+  padding: 0;
+}
+
+.tech-stack-list li {
+  margin-bottom: 6px;
+}
+
+/* --- KONTEN UTAMA KANAN --- */
+.main-content {
+  flex: 2.5;
+}
+
 .section-card {
   background: #ffffff;
   padding: 28px;
@@ -97,10 +186,10 @@ body {
   margin-bottom: 18px;
 }
 
-/* 5. Tabel Semantik & Responsive Scroll */
+/* 4. Tabel Semantik */
 .table-container {
   overflow-x: auto;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
 }
@@ -136,7 +225,6 @@ body {
 .text-right { text-align: right; }
 .font-bold { font-weight: 600; color: #0f172a; }
 
-/* Status Badges */
 .badge {
   padding: 3px 8px;
   font-size: 10.5px;
@@ -147,38 +235,32 @@ body {
 .badge-warning { background: #fef3c7; color: #b45309; }
 .badge-info { background: #e0f2fe; color: #0369a1; }
 
-/* 6. Lists Grid Layout (Flexbox Simetris) */
-.lists-grid {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.list-card {
-  flex: 1;
-  min-width: 250px;
+/* 5. Workflow Ordered List Card */
+.workflow-card {
   background-color: #f8fafc;
   padding: 18px;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
-  border-top: 3px solid #0284c7;
+  border-left: 4px solid #0284c7;
 }
 
-.list-title {
+.workflow-title {
   font-size: 14px;
   color: #0f172a;
   margin-bottom: 10px;
 }
 
-.tech-tags-list, .workflow-step-list {
-  padding-left: 18px;
+.workflow-step-list {
+  padding-left: 20px;
   font-size: 12.5px;
   color: #334155;
 }
 
-.tag-cat { font-weight: 600; color: #0f172a; }
+.workflow-step-list li {
+  margin-bottom: 8px;
+}
 
-/* 7. Form Controls & Accessibility Focus Ring */
+/* 6. Form Controls & Accessibility */
 .form-fieldset {
   border: 1px solid #cbd5e1;
   border-radius: 10px;
@@ -220,7 +302,6 @@ body {
   border-radius: 8px;
 }
 
-/* Indikator Fokus Aksesibilitas WCAG */
 .form-control:focus {
   outline: none;
   border-color: #0284c7;
@@ -246,7 +327,7 @@ body {
   background-color: #0369a1;
 }
 
-/* 8. Footer Semantik */
+/* 7. Footer */
 .main-footer {
   text-align: center;
   padding: 18px;
@@ -255,9 +336,19 @@ body {
   margin-top: 20px;
 }
 
-/* 9. Media Queries Responsif */
-@media (max-width: 768px) {
-  .content-wrapper { flex-direction: column; }
-  .main-header { flex-direction: column; gap: 12px; text-align: center; }
-  .navbar ul { flex-direction: column; gap: 8px; }
+/* 8. Responsivitas Layar HP */
+@media (max-width: 868px) {
+  .portfolio-container {
+    flex-direction: column;
+  }
+  .profile-sidebar {
+    max-width: 100%;
+    width: 100%;
+    position: static;
+  }
+  .main-header {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
 }
