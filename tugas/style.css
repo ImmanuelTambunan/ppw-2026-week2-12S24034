@@ -2,7 +2,7 @@
    CUSTOM CSS OVERRIDES & VARIABLES (THEMING)
    ========================================== */
 
-/* 1. MENDIFINISIKAN 7 CSS CUSTOM PROPERTIES (VARIABEL) ON :ROOT */
+/* 1. MENDIFINISIKAN 7 CSS CUSTOM PROPERTIES ON :ROOT */
 :root {
   --primary-brand: #0284c7;        /* Sky Blue Accent */
   --primary-hover: #0369a1;        /* Darker Blue Hover */
