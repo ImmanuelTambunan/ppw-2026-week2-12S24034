@@ -1,425 +1,102 @@
 /* ==========================================
-   ENHANCED COLORFUL & MODERN CSS
+   CUSTOM CSS OVERRIDES & VARIABLES (THEMING)
    ========================================== */
 
-/* 1. UNIVERSAL RESET & FONTS */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* 1. MENDIFINISIKAN 7 CSS CUSTOM PROPERTIES (VARIABEL) ON :ROOT */
+:root {
+  --primary-brand: #0284c7;        /* Sky Blue Accent */
+  --primary-hover: #0369a1;        /* Darker Blue Hover */
+  --surface-bg: #f0f9ff;          /* Soft Sky Blue Gradient BG */
+  --card-radius: 16px;             /* Card Border Radius */
+  --shadow-lift: 0 12px 24px -6px rgba(2, 132, 199, 0.18);
+  --border-accent: #bae6fd;
+  --text-dark: #0f172a;
 }
 
+/* 2. BASE BODY STYLING WITH CUSTOM VARIABLE */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  line-height: 1.6;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%); /* Latar Biru Muda Soft */
-  color: #1e293b;
-  padding: 24px;
+  background: linear-gradient(135deg, var(--surface-bg) 0%, #e0f2fe 50%, #f8fafc 100%);
+  color: var(--text-dark);
   min-height: 100vh;
 }
 
-/* 2. HEADER & NAVIGASI DENGAN GRADIENT & SHADOW */
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  padding: 16px 28px;
-  border-radius: 16px;
-  border: 1px solid #bae6fd;
-  box-shadow: 0 8px 20px -6px rgba(2, 132, 199, 0.15);
-  margin-bottom: 24px;
+/* 3. NAVBAR CUSTOMIZATION */
+#mainNavbar {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-accent);
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: 800;
-  background: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.navbar ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #334155;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: all 0.25s ease;
-}
-
-.navbar a:hover {
-  color: #0284c7;
-  background-color: #e0f2fe;
-}
-
-/* 3. LAYOUT UTAMA (2 KOLOM FLEXBOX) */
-.portfolio-container {
-  display: flex !important;
-  flex-direction: row !important;
-  gap: 24px !important;
-  align-items: flex-start !important;
-  width: 100%;
-}
-
-/* --- SIDEBAR PROFIL KIRI (COLORFUL SKY BLUE GRADIENT) --- */
-.profile-sidebar {
-  flex: 0 0 320px !important;
-  width: 320px !important;
-  position: sticky;
-  top: 20px;
-}
-
+/* 4. PROFILE SIDEBAR OVERRIDES */
 .profile-card {
-  background: #ffffff;
-  border-radius: 20px;
-  border: 1.5px solid #bae6fd;
-  box-shadow: 0 12px 28px -6px rgba(2, 132, 199, 0.18);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-accent);
   overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-card:hover {
   transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
 }
 
-.profile-card::before {
-  content: "";
-  display: block;
-  height: 110px;
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #6366f1 100%); /* Gradasi Biru Terang ke Ungu */
+.profile-banner {
+  height: 100px;
+  background: linear-gradient(135deg, #38bdf8 0%, var(--primary-brand) 50%, #6366f1 100%);
 }
 
 .profile-avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
   position: relative;
-  width: 104px;
-  height: 104px;
-  margin: -52px auto 12px auto;
 }
 
 .profile-avatar {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #ffffff;
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
-  background-color: #ffffff;
 }
 
 .status-badge {
-  position: absolute;
-  bottom: 2px;
-  right: 2px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 9px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.profile-bio, .profile-skills {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border-accent);
+}
+
+/* 5. PROJECT CARDS HOVER MICRO-INTERACTION */
+.project-card {
   border-radius: 12px;
-  border: 2px solid #ffffff;
-  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.profile-card-content {
-  padding: 0 18px 20px 18px;
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--primary-brand);
 }
 
-.profile-name {
-  font-size: 18px;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 4px;
+/* 6. FORM FLOATING & VALIDATION FOCUS RING */
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-brand);
+  box-shadow: 0 0 0 0.25rem rgba(2, 132, 199, 0.2);
 }
 
-.profile-role {
-  font-size: 12px;
-  font-weight: 700;
-  color: #0284c7;
-  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-  display: inline-block;
-  padding: 3px 12px;
-  border-radius: 16px;
-  margin-bottom: 2px;
-}
-
-.profile-inst {
-  font-size: 11.5px;
-  color: #64748b;
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.profile-bio {
-  font-size: 12px;
-  color: #334155;
-  line-height: 1.55;
-  margin-bottom: 16px;
-  text-align: left;
-  padding: 10px 12px;
-  background: #f0f9ff;
-  border-radius: 10px;
-  border-left: 3px solid #38bdf8;
-}
-
-.profile-skills {
-  text-align: left;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid #bae6fd;
-}
-
-.skills-title {
-  font-size: 11.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: #0284c7;
-  margin-bottom: 8px;
-  border-bottom: 2px solid #e0f2fe;
-  padding-bottom: 4px;
-}
-
-.tech-stack-list {
-  list-style: none;
-  font-size: 11.5px;
-  color: #334155;
-  padding: 0;
-}
-
+/* 7. TECH STACK LIST BULLET CUSTOMIZATION */
 .tech-stack-list li {
-  margin-bottom: 6px;
-  padding-left: 14px;
   position: relative;
+  padding-left: 14px;
 }
 
 .tech-stack-list li::before {
   content: "✦";
-  color: #38bdf8;
-  font-weight: bold;
+  color: var(--primary-brand);
   position: absolute;
   left: 0;
   font-size: 10px;
-  top: 1px;
-}
-
-/* --- KONTEN UTAMA KANAN (COLORFUL CARDS) --- */
-.main-content {
-  flex: 1 !important;
-  min-width: 0;
-}
-
-.section-card {
-  background: #ffffff;
-  padding: 26px;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
-  margin-bottom: 24px;
-}
-
-.section-title {
-  font-size: 20px;
-  color: #0f172a;
-  margin-bottom: 4px;
-  font-weight: 800;
-}
-
-.section-subtitle {
-  font-size: 12.5px;
-  color: #64748b;
-  margin-bottom: 18px;
-}
-
-/* TABEL STYLING BERWARNA */
-.table-container {
-  overflow-x: auto;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  border: 1px solid #e0f2fe;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.06);
-}
-
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12.5px;
-}
-
-.data-table caption {
-  padding: 12px 16px;
-  font-weight: 800;
-  color: #0284c7;
-  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
-  border-bottom: 1.5px solid #bae6fd;
-  text-align: left;
-  font-size: 13px;
-}
-
-.data-table th, .data-table td {
-  padding: 12px 14px;
-  border-bottom: 1px solid #f1f5f9;
-}
-
-.data-table thead th {
-  background-color: #f8fafc;
-  color: #475569;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.data-table tbody tr:hover {
-  background-color: #f0f9ff;
-}
-
-.col-center { text-align: center; }
-.text-right { text-align: right; }
-.font-bold { font-weight: 700; color: #0f172a; }
-
-/* BADGES WARNA TERANG ELEGAN */
-.badge {
-  padding: 4px 10px;
-  font-size: 10.5px;
-  font-weight: 700;
-  border-radius: 12px;
-  display: inline-block;
-}
-.badge-success { 
-  background: #dcfce7; 
-  color: #15803d; 
-  border: 1px solid #86efac; 
-}
-.badge-warning { 
-  background: #fef3c7; 
-  color: #b45309; 
-  border: 1px solid #fde047; 
-}
-.badge-info { 
-  background: #e0f2fe; 
-  color: #0369a1; 
-  border: 1px solid #7dd3fc; 
-}
-
-/* WORKFLOW CARD DENGAN GRADIENT ACCENT */
-.workflow-card {
-  background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
-  padding: 18px 20px;
-  border-radius: 14px;
-  border: 1px solid #bae6fd;
-  border-left: 5px solid #0284c7;
-}
-
-.workflow-title {
-  font-size: 14px;
-  color: #0f172a;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.workflow-step-list {
-  padding-left: 20px;
-  font-size: 12.5px;
-  color: #334155;
-}
-
-.workflow-step-list li {
-  margin-bottom: 8px;
-}
-
-.workflow-step-list li::marker {
-  color: #0284c7;
-  font-weight: bold;
-}
-
-/* FORM STYLING DENGAN FOCUS GLOW */
-.form-fieldset {
-  border: 1.5px solid #cbd5e1;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
-  background-color: #ffffff;
-}
-
-.form-legend {
-  font-size: 12px;
-  font-weight: 800;
-  color: #0284c7;
-  padding: 0 8px;
-  background-color: #e0f2fe;
-  border-radius: 6px;
-}
-
-.form-group { margin-bottom: 14px; }
-
-.form-label {
-  display: block;
-  font-size: 12.5px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.inline-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12.5px;
-  cursor: pointer;
-}
-
-.radio-group { display: flex; gap: 18px; margin-top: 4px; }
-
-.form-control {
-  width: 100%;
-  padding: 10px 12px;
-  font-size: 12.5px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: #0284c7;
-  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.2);
-}
-
-.req { color: #ef4444; }
-
-.btn-submit {
-  width: 100%;
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-  color: #ffffff;
-  border: none;
-  padding: 12px;
-  font-size: 14px;
-  font-weight: 700;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-  transition: all 0.25s ease;
-}
-
-.btn-submit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
-}
-
-/* FOOTER */
-.main-footer {
-  text-align: center;
-  padding: 18px;
-  font-size: 12px;
-  color: #64748b;
-  margin-top: 10px;
 }
