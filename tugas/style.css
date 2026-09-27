@@ -27,7 +27,13 @@ body {
   border-bottom: 1px solid var(--border-accent);
 }
 
-/* 4. PROFILE SIDEBAR OVERRIDES */
+/* 4. HERO SECTION STYLING */
+.hero-section {
+  background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%);
+  border-bottom: 3px solid var(--border-accent);
+}
+
+/* 5. PROFILE SIDEBAR OVERRIDES */
 .profile-card {
   border-radius: var(--card-radius);
   border: 1px solid var(--border-accent);
@@ -68,7 +74,7 @@ body {
   border: 1px solid var(--border-accent);
 }
 
-/* 5. PROJECT CARDS HOVER MICRO-INTERACTION */
+/* 6. PROJECT CARDS HOVER MICRO-INTERACTION */
 .project-card {
   border-radius: 12px;
   border: 1px solid #e2e8f0;
@@ -81,13 +87,13 @@ body {
   border-color: var(--primary-brand);
 }
 
-/* 6. FORM FLOATING & VALIDATION FOCUS RING */
+/* 7. FORM FLOATING & VALIDATION FOCUS RING */
 .form-control:focus, .form-select:focus {
   border-color: var(--primary-brand);
   box-shadow: 0 0 0 0.25rem rgba(2, 132, 199, 0.2);
 }
 
-/* 7. TECH STACK LIST BULLET CUSTOMIZATION */
+/* 8. TECH STACK LIST BULLET CUSTOMIZATION */
 .tech-stack-list li {
   position: relative;
   padding-left: 14px;
