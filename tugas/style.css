@@ -192,7 +192,7 @@ body {
    7. FORMULIR LAYANAN & PSEUDO-CLASS :focus-within
    -------------------------------------------------------------------------- */
 /* Efek gaya interaktif pada container form saat elemen di dalamnya difokuskan */
-fieldset:focus-within {
+fieldset:focus-within { 
   border-color: var(--primary-brand) !important;
   box-shadow: var(--shadow-sm-custom);
   background-color: rgba(255, 255, 255, 0.95);
