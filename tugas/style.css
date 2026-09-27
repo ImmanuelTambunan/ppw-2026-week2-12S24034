@@ -1,44 +1,77 @@
-/* ==========================================
-   CUSTOM CSS OVERRIDES & VARIABLES (THEMING)
-   ========================================== */
+/* ==========================================================================
+   TUGAS PRAKTIKUM MINGGU 03 - PENGUASAAN CSS LANJUTAN & BOOTSTRAP OVERRIDES
+   Nama    : Immanuel Alexander Tambunan
+   NIM     : 12S24034
+   Prodi   : S1 Sistem Informasi - Institut Teknologi Del
+   ========================================================================== */
 
-/* 1. MENDIFINISIKAN 7 CSS CUSTOM PROPERTIES ON :ROOT */
+/* --------------------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES / VARIABLES (:root)
+      Mendefinisikan 7+ variabel global untuk tema warna & ukuran terpusat.
+   -------------------------------------------------------------------------- */
 :root {
+  /* Palet Warna Identitas Personal (Sky Blue & Deep Navy Theme) */
   --primary-brand: #0284c7;        /* Sky Blue Accent */
-  --primary-hover: #0369a1;        /* Darker Blue Hover */
-  --surface-bg: #f0f9ff;          /* Soft Sky Blue Gradient BG */
-  --card-radius: 16px;             /* Card Border Radius */
-  --shadow-lift: 0 12px 24px -6px rgba(2, 132, 199, 0.18);
-  --border-accent: #bae6fd;
-  --text-dark: #0f172a;
+  --primary-hover: #0369a1;        /* Darker Blue Hover State */
+  --secondary-brand: #0f172a;      /* Slate/Navy Dark Accent */
+  --surface-bg: #f0f9ff;          /* Soft Gradient Surface Background */
+  --border-accent: #bae6fd;        /* Light Blue Border Accent */
+  --text-main: #0f172a;            /* Main Dark Body Text */
+  --text-muted-custom: #64748b;    /* Muted Text Accent */
+
+  /* Jarak, Radius, dan Efek Bayangan (Elevasi) */
+  --card-radius: 16px;             /* Custom Card Border Radius */
+  --shadow-sm-custom: 0 4px 6px -1px rgba(2, 132, 199, 0.08);
+  --shadow-lift: 0 12px 24px -6px rgba(2, 132, 199, 0.2);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 2. BASE BODY STYLING WITH CUSTOM VARIABLE */
+/* --------------------------------------------------------------------------
+   2. STYLING ELEMEN BASE & TIPOGRAFI
+   -------------------------------------------------------------------------- */
 body {
   background: linear-gradient(135deg, var(--surface-bg) 0%, #e0f2fe 50%, #f8fafc 100%);
-  color: var(--text-dark);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   min-height: 100vh;
+  line-height: 1.6;
 }
 
-/* 3. NAVBAR CUSTOMIZATION */
+/* --------------------------------------------------------------------------
+   3. CUSTOM OVERRIDES NAVBAR & HERO SECTION
+   -------------------------------------------------------------------------- */
 #mainNavbar {
   background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-accent);
 }
 
-/* 4. HERO SECTION STYLING */
+/* Advanced Pseudo-class :hover pada Link Navigasi */
+#mainNavbar .nav-link {
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+#mainNavbar .nav-link:hover {
+  color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+/* Hero Section Gradient Override */
 .hero-section {
-  background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%);
+  background: linear-gradient(135deg, var(--secondary-brand) 0%, var(--primary-brand) 100%);
   border-bottom: 3px solid var(--border-accent);
 }
 
-/* 5. PROFILE SIDEBAR OVERRIDES */
+/* --------------------------------------------------------------------------
+   4. KARTU PROFIL SIDEBAR & ADVANCED SELECTORS
+   -------------------------------------------------------------------------- */
 .profile-card {
   border-radius: var(--card-radius);
   border: 1px solid var(--border-accent);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: var(--transition-smooth);
 }
 
 .profile-card:hover {
@@ -69,40 +102,129 @@ body {
   right: 4px;
 }
 
-.profile-bio, .profile-skills {
-  background-color: rgba(255, 255, 255, 0.8);
+.profile-bio, 
+.profile-skills {
+  background-color: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--border-accent);
 }
 
-/* 6. PROJECT CARDS HOVER MICRO-INTERACTION */
+/* Kombinator Child & Pseudo-element ::before pada Daftar Skill */
+.tech-stack-list > li {
+  position: relative;
+  padding-left: 16px;
+  transition: var(--transition-smooth);
+}
+
+.tech-stack-list > li::before {
+  content: "✦";
+  color: var(--primary-brand);
+  position: absolute;
+  left: 0;
+  font-size: 11px;
+  top: 1px;
+}
+
+.tech-stack-list > li:hover {
+  color: var(--primary-brand);
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   5. PORTOFOLIO CARDS & MIKRO-INTERAKSI PSEUDO-ELEMENTS (LAB 1)
+   -------------------------------------------------------------------------- */
 .project-card {
+  position: relative;
   border-radius: 12px;
   border: 1px solid #e2e8f0;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+/* Indikator Ornamen Grafis Bergerak menggunakan ::before */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--primary-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lift);
-  border-color: var(--primary-brand);
+  border-color: var(--border-accent);
 }
 
-/* 7. FORM FLOATING & VALIDATION FOCUS RING */
-.form-control:focus, .form-select:focus {
+/* Certificate Icon Styling */
+.certificate-icon {
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover .certificate-icon {
+  transform: scale(1.15);
+}
+
+/* --------------------------------------------------------------------------
+   6. STRUCTURAL PSEUDO-CLASSES (:nth-child) UNTUK TABEL SEMANTIK
+   -------------------------------------------------------------------------- */
+.table-responsive table tbody tr:nth-child(even) {
+  background-color: rgba(240, 249, 255, 0.5);
+}
+
+.table-responsive table tbody tr {
+  transition: var(--transition-smooth);
+}
+
+.table-responsive table tbody tr:hover {
+  background-color: #e0f2fe;
+}
+
+/* --------------------------------------------------------------------------
+   7. FORMULIR LAYANAN & PSEUDO-CLASS :focus-within
+   -------------------------------------------------------------------------- */
+/* Efek gaya interaktif pada container form saat elemen di dalamnya difokuskan */
+fieldset:focus-within {
+  border-color: var(--primary-brand) !important;
+  box-shadow: var(--shadow-sm-custom);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.form-control:focus, 
+.form-select:focus {
   border-color: var(--primary-brand);
   box-shadow: 0 0 0 0.25rem rgba(2, 132, 199, 0.2);
 }
 
-/* 8. TECH STACK LIST BULLET CUSTOMIZATION */
-.tech-stack-list li {
-  position: relative;
-  padding-left: 14px;
+/* Input group icon focus style */
+.input-group:focus-within .input-group-text {
+  background-color: var(--primary-brand);
+  color: #ffffff;
+  border-color: var(--primary-brand);
 }
 
-.tech-stack-list li::before {
-  content: "✦";
-  color: var(--primary-brand);
-  position: absolute;
-  left: 0;
-  font-size: 10px;
+.input-group-text {
+  transition: var(--transition-smooth);
 }
+
+/* --------------------------------------------------------------------------
+   8. MODAL DIALOG OVERRIDES
+   -------------------------------------------------------------------------- */
+.modal-content {
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border-accent);
+}
+
+/* Bebas dari !important - Memanfaatkan Spesifisitas Asli CSS */
